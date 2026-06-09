@@ -1,0 +1,62 @@
+{
+  "name": "TycoonTrends",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Shared": {
+        "$path": "src/shared"
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "Server": {
+        "$path": "src/server"
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "Client": {
+          "$path": "src/client"
+        }
+      }
+    },
+    "Workspace": {
+      "$className": "Workspace",
+      "$properties": {
+        "Gravity": 196.2
+      },
+      "Baseplate": {
+        "$className": "Part",
+        "$properties": {
+          "Size": [1024, 1, 1024],
+          "Position": [0, 0, 0],
+          "Anchored": true,
+          "Color": [0.51, 0.76, 0.47],
+          "Material": "Grass"
+        }
+      },
+      "SpawnLocation": {
+        "$className": "SpawnLocation",
+        "$properties": {
+          "Size": [6, 1, 6],
+          "Position": [0, 1, 0],
+          "Anchored": true
+        }
+      }
+    },
+    "Lighting": {
+      "$className": "Lighting",
+      "$properties": {
+        "Ambient": [0.7, 0.72, 0.78],
+        "Brightness": 2.5,
+        "ClockTime": 13
+      }
+    },
+    "SoundService": {
+      "$className": "SoundService"
+    }
+  }
+}

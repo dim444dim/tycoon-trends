@@ -1,0 +1,31 @@
+name: Rojo Build Check
+
+# Valide que le projet Roblox compile (structure + syntaxe Luau de base).
+# Zéro config : pas besoin de selene.toml. Échoue si rojo build échoue.
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rojo 7.4.4
+        run: |
+          curl -sSL https://github.com/rojo-rbx/rojo/releases/download/v7.4.4/rojo-7.4.4-linux-x86_64.zip -o rojo.zip
+          unzip -q rojo.zip
+          chmod +x rojo
+          sudo mv rojo /usr/local/bin/
+          rojo --version
+
+      - name: Build project
+        run: rojo build default.project.json --output build.rbxlx
+
+      - name: Confirm output
+        run: |
+          ls -lh build.rbxlx
+          echo "✅ Le projet compile correctement"
